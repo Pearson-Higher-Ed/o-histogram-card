@@ -1,0 +1,13 @@
+////
+/// @group o-histogram
+/// @link http://registry.origami.ft.com/components/o-histogram
+////
+
+/// Hello world
+///
+/// @param {String} $who [world]
+@mixin oBarChartCardHello($who: world) {
+	.foo {
+		content: 'Hello, #{$who}!';
+	}
+}

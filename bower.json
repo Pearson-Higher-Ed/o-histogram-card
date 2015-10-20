@@ -1,0 +1,27 @@
+{
+  "name": "o-histogram-card",
+  "version": "0.0.1",
+  "description": "sample assignment histogram",
+  "homepage": "https://github.com/Pearson-Higher-Ed/o-histogram-card",
+  "authors": [
+    "Gadde",
+    "Tanuja <Tanuja.gadde@Pearson.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.6",
+    "o-card": "~1.0.1"
+  },
+  "main": [
+    "main.scss",
+    "main.js"
+  ],
+  "private": true
+}

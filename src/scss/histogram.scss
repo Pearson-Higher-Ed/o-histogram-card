@@ -1,0 +1,32 @@
+.o-histogram rect {
+	fill: #5c656b;
+}
+.o-histogram text {
+	fill: #5c656b;
+	font: 10px sans-serif;
+	text-anchor: middle;
+}
+.o-histogram__legend text {
+	fill: #5c656b;
+	font: 10px sans-serif;
+	text-anchor: end;
+}
+.o-histogram__legend line {
+	stroke: #efefef;
+	stroke-width: 1px;
+}
+.o-histogram__percent-value-text {
+	fill: #2A9FD8;
+	font: 10px sans-serif;
+}
+.o-histogram-hidden-item {
+	display: none;
+}
+.o-histogram-item {
+	font-size: 150%;
+}
+.o-histogram-title {
+	font-size: 14px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
