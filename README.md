@@ -1,4 +1,4 @@
-# o-histogramcard [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/o-histogram-card.svg)](https://travis-ci.org/Pearson-Higher-Ed/o-histogram-card)
+# o-histogram-card [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/o-histogram-card.svg)](https://travis-ci.org/Pearson-Higher-Ed/o-histogram-card)
 
 ## Use
 
@@ -42,8 +42,9 @@ Quick-start (to see the demo)
 This card uses Origami Build Tools
 
 To run the demo:
-
+```bash
 origami-build-tools install
 origami-build-tools build
 origami-build-tools demo --runServer --watch
+```
 The page will now be available locally, probably at http://localhost:8080/demos/local/demo.html
