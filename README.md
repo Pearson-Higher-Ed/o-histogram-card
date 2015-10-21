@@ -1,6 +1,6 @@
 # o-histogram-card [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/o-histogram-card.svg)](https://travis-ci.org/Pearson-Higher-Ed/o-histogram-card)
 
-## Use
+## Usage
 
 To use, create a new instance of the card with a JSON configuration payload.
 
