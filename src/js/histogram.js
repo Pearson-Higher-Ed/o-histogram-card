@@ -18,7 +18,6 @@ module.exports = function() {
 	var textXaxis = null;
 
 	function chart(dom) {
-   		
 		var svg = createSVGElement("svg");
 		svg.setAttribute("width", _width);
 		svg.setAttribute("height", _height);
@@ -135,10 +134,10 @@ module.exports = function() {
 	function createChart(svg) {
 		var chart = createSVGElement("g");
 		var valueIs = null;
-		if (_verticalScale < 20){
-			 valueIs = '*' +(20 / _verticalScale);
-		} else if (_verticalScale > 20){
-			  valueIs = '/' +(_verticalScale / 20);
+		if (_verticalScale < 20) {
+			valueIs = '*' +(20 / _verticalScale);
+		} else if (_verticalScale > 20) {
+			valueIs = '/' +(_verticalScale / 20);
 		}
 		_data.forEach(function(d, i) {
 			var container = createSVGElement("g");
@@ -156,17 +155,14 @@ module.exports = function() {
 			percent.setAttribute("y", bottom - math.eval(d.value + valueIs) - 5);
 			percent.setAttribute("x", 15);
 			percent.setAttribute("class", "o-histogram__percent-value-text o-histogram-hidden-item text-value" + i);
-			
 			tspan1.setAttribute("y", bottom - math.eval(d.value + valueIs) - 20);
 			tspan1.setAttribute("x", 15);
 			tspan1.setAttribute("class", "o-histogram__percent-value-text o-histogram-item");
 			tspan1.appendChild(document.createTextNode(d.value));
-			
 			tspan2.setAttribute("y", bottom - math.eval(d.value + valueIs) - 10);
 			tspan2.setAttribute("x", 15);
 			tspan2.setAttribute("class", "o-histogram__percent-value-text");
 			tspan2.appendChild(document.createTextNode("students"));
-			
 			percent.appendChild(tspan1);
 			percent.appendChild(tspan2);
 			container.appendChild(percent);
