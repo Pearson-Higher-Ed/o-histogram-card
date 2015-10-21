@@ -1,6 +1,6 @@
 {
   "name": "o-histogram-card",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": " assignment histogram Card",
   "main": "histogram.js",
   "dependencies": {},
