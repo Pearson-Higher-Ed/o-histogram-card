@@ -96,7 +96,6 @@ module.exports = function() {
 	};
 
 	return chart;
-	
 	// Convienient functions are below for creating the whole chart.
 	function createSVGElement(element) {
 		return document.createElementNS("http://www.w3.org/2000/svg", element);
