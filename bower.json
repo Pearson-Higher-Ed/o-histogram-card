@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "d3": "~3.5.6",
+    "mathjs":"~2.4.0",
     "o-card": "~1.0.1"
   },
   "main": [

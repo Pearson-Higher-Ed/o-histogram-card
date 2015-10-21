@@ -1,11 +1,10 @@
 /*global*/
 
 "use strict";
-
+var math = require("mathjs");
 module.exports = function() {
 	var _width = 400;
 	var _height = 200;
-	var _classAverage = 50;
 	var _data = {};
 	var _element = null;
 	var _xaxisLabel = null;
@@ -108,12 +107,12 @@ module.exports = function() {
 		intializing(_cardSize);
 		var legend = createSVGElement("g");
 		legend.setAttribute("class", "o-histogram__legend");
-		var text = createSVGElement("text");
-		text.setAttribute("x", textXaxis);
-		text.setAttribute("y", top * 2 );
-		text.setAttribute("transform", "rotate(270 10 " + top * 2 + ")");
-		text.appendChild(document.createTextNode(_yaxisLabel));
-		legend.appendChild(text);
+		var ylabel = createSVGElement("text");
+		ylabel.setAttribute("x", textXaxis);
+		ylabel.setAttribute("y", top * 2 );
+		ylabel.setAttribute("transform", "rotate(270 10 " + top * 2 + ")");
+		ylabel.appendChild(document.createTextNode(_yaxisLabel));
+		legend.appendChild(ylabel);
 
 
 		var i = 0;
@@ -147,23 +146,23 @@ module.exports = function() {
 
 			var rect = createSVGElement("rect");
 			rect.setAttribute("width", 30);
-			rect.setAttribute("height", eval(d.value + valueIs));
-			rect.setAttribute("y", bottom - eval(d.value + valueIs));
+			rect.setAttribute("height", math.eval(d.value + valueIs));
+			rect.setAttribute("y", bottom - math.eval(d.value + valueIs));
 			container.appendChild(rect);
 
 			var percent = createSVGElement("text");
 			var tspan1 = createSVGElement("tspan");
 			var tspan2 = createSVGElement("tspan");
-			percent.setAttribute("y", bottom - eval(d.value + valueIs) - 5);
+			percent.setAttribute("y", bottom - math.eval(d.value + valueIs) - 5);
 			percent.setAttribute("x", 15);
 			percent.setAttribute("class", "o-histogram__percent-value-text o-histogram-hidden-item text-value" + i);
 			
-			tspan1.setAttribute("y", bottom - eval(d.value + valueIs) - 20);
+			tspan1.setAttribute("y", bottom - math.eval(d.value + valueIs) - 20);
 			tspan1.setAttribute("x", 15);
 			tspan1.setAttribute("class", "o-histogram__percent-value-text o-histogram-item");
 			tspan1.appendChild(document.createTextNode(d.value));
 			
-			tspan2.setAttribute("y", bottom - eval(d.value + valueIs) - 10);
+			tspan2.setAttribute("y", bottom - math.eval(d.value + valueIs) - 10);
 			tspan2.setAttribute("x", 15);
 			tspan2.setAttribute("class", "o-histogram__percent-value-text");
 			tspan2.appendChild(document.createTextNode("students"));
@@ -201,7 +200,7 @@ module.exports = function() {
 	function intializing(_cardSizeValue) {
 		top =_height / 4;
 		bottom = top * 3;
-		if (_cardSizeValue == "large") {
+		if (_cardSizeValue === "large") {
 			newTopValue = top *2;
 			textXaxis = 0;
 			spacing = (bottom - top) / 10;
