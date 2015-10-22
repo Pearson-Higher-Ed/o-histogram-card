@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	var Histogram = require("../../main");
 
 	new Histogram("#chart", {
-		size:"large",
+		size:"medium",
 		data:[
 			{name: "0-9", value: 9},
 			{name: "10-19", value: 18},

@@ -1,7 +1,7 @@
 /*global*/
 
 "use strict";
-var math = require("mathjs");
+
 module.exports = function() {
 	var _width = 400;
 	var _height = 200;
@@ -134,9 +134,9 @@ module.exports = function() {
 		var chart = createSVGElement("g");
 		var valueIs = null;
 		if (_verticalScale < 20) {
-			valueIs = '*' +(20 / _verticalScale);
+			valueIs = '*' ;
 		} else if (_verticalScale > 20) {
-			valueIs = '/' +(_verticalScale / 20);
+			valueIs = '/' ;
 		}
 		_data.forEach(function(d, i) {
 			var container = createSVGElement("g");
@@ -144,21 +144,21 @@ module.exports = function() {
 
 			var rect = createSVGElement("rect");
 			rect.setAttribute("width", 30);
-			rect.setAttribute("height", math.eval(d.value + valueIs));
-			rect.setAttribute("y", bottom - math.eval(d.value + valueIs));
+			rect.setAttribute("height", mathCalculation(d.value ,valueIs));
+			rect.setAttribute("y", bottom - mathCalculation(d.value , valueIs));
 			container.appendChild(rect);
 
 			var percent = createSVGElement("text");
 			var tspan1 = createSVGElement("tspan");
 			var tspan2 = createSVGElement("tspan");
-			percent.setAttribute("y", bottom - math.eval(d.value + valueIs) - 5);
+			percent.setAttribute("y", bottom - mathCalculation(d.value ,valueIs) - 5);
 			percent.setAttribute("x", 15);
 			percent.setAttribute("class", "o-histogram__percent-value-text o-histogram-hidden-item text-value" + i);
-			tspan1.setAttribute("y", bottom - math.eval(d.value + valueIs) - 20);
+			tspan1.setAttribute("y", bottom - mathCalculation(d.value ,valueIs) - 20);
 			tspan1.setAttribute("x", 15);
 			tspan1.setAttribute("class", "o-histogram__percent-value-text o-histogram-item");
 			tspan1.appendChild(document.createTextNode(d.value));
-			tspan2.setAttribute("y", bottom - math.eval(d.value + valueIs) - 10);
+			tspan2.setAttribute("y", bottom - mathCalculation(d.value , valueIs) - 10);
 			tspan2.setAttribute("x", 15);
 			tspan2.setAttribute("class", "o-histogram__percent-value-text");
 			tspan2.appendChild(document.createTextNode("students"));
@@ -190,6 +190,14 @@ module.exports = function() {
 			name2.appendChild(document.createTextNode(_xaxisLabel));
 			chart.appendChild(name2);
 		return chart;
+	}
+
+	function mathCalculation(data, operator){
+		switch (operator) {
+			case '*': return data *  (20 / _verticalScale);
+			case '/': return data / (_verticalScale / 20);
+			default: return 'null';
+		}
 	}
 
 	function intializing(_cardSizeValue) {
